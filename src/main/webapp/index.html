@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Websocket test</title>
+</head>
+<body>
+	<script type="text/javascript" charset="utf-8">
+		var socket = new WebSocket('ws://localhost:8080/CommonService/delayedecho');
+		socket.onopen = function(events){
+		socket.send("This is html websocket ");
+		socket.onmessage = function(events){
+			console.log('Client received a message');
+		}
+		socket.onclose = function(events){
+			console.log('client closed')
+		}
+		socket.close();
+		}
+	</script>
+</body>
+</html>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.websocket.server.ServerEndpointConfig;
 
 import miteke.angular.ws.DemoEndpoint;
+import miteke.angular.ws.DemoEndpointAnnotation;
 
 /**
  * Servlet implementation class WebsocketServlet
@@ -31,6 +32,7 @@ public class WebsocketServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		logger.info("Starting web socket component ...");
 		ServerEndpointConfig.Builder.create(DemoEndpoint.class, "/echo").build();
+		//ServerEndpointConfig.Builder.create(DemoEndpointAnnotation.class, "/delayedecho").build();
 		logger.info("web socket component  has been started..");
 	}
 
